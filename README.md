@@ -133,8 +133,18 @@ c.STLink或其他烧录方案的工具准备和驱动安装
 #8.在上电时，语音模块也会正常供电，此时根据仓库中
 
 -📂
+[2.1 快速上手.pdf](https://github.com/user-attachments/files/26825780/2.1.pdf)
 
--📂
 
--📂
+
+[1.1 语音交互模块简介.pdf](https://github.com/user-attachments/files/26825698/1.1.pdf)
+
+
+
+
+
+
+
+
+
 
