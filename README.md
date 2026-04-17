@@ -3,6 +3,9 @@
       JimingYang(Independent developer)
 产品描述:
 这是一个基于stm32f103c8t6型号单片机的项目，用于为用户提供语音操作的睡眠指标收集与服务。
+复刻此项目之前你需要自行完成:
+a.模块清单的硬件购买
+b.keil以及STM32CubeMX的开发环境搭建
 
 1.模块清单
 
@@ -64,5 +67,11 @@
                      
                                      |-------------------------->|                        |
 
-                      <img width="1279" height="1706" alt="微信图片_20260414140655_299_4" src="https://github.com/user-attachments/assets/255c90b4-b50b-42fa-9169-fdbc6d10955c" />
+
+
+
+3.接线实物图片:
+
+<img width="560" height="400" alt="微信图片_20260414140655_299_4" src="https://github.com/user-attachments/assets/a7895d3b-1b5f-4550-8378-1d658e95a0b1" />
+
 
