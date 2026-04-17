@@ -113,7 +113,14 @@ c.STLink或其他烧录方案的工具准备和驱动安装
 
 -📂 [Src 文件夹（源文件目录）](./Src/)
 
-#7.最后根据路径📂<你的工程文件名>\MDK-ARM\Standard_Project.uvprojx。进入keil的开发界面
+#7.最后根据路径📂<你的工程文件名>\MDK-ARM\Standard_Project.uvprojx
+
+进入keil的开发界面
+
+注意你可能需要在keil完成文件组的包含和路径包含
+<img width="780" height="587" alt="屏幕截图 2026-04-17 181720" src="https://github.com/user-attachments/assets/21bb798c-1d20-4911-b45c-ab418281d57b" />
+<img width="603" height="221" alt="屏幕截图 2026-04-17 181706" src="https://github.com/user-attachments/assets/cea2f84f-ef80-4760-97f5-b996236f4951" />
+
 
 
 编译并用你的烧录方案烧录即可。
