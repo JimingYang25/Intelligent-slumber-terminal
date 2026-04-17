@@ -140,6 +140,7 @@ c.STLink或其他烧录方案的工具准备和驱动安装
 
 [1.1 语音交互模块简介.pdf](https://github.com/user-attachments/files/26825698/1.1.pdf)
 
+完成语音模块的固件烧录即可（单字节寄存器数据相应的API函数需自行定义，根据main.c中的项目示例）
 
 
 
