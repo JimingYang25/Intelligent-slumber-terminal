@@ -10,7 +10,7 @@ b.keil以及STM32CubeMX的开发环境搭建
 
 c.STLink或其他烧录方案的工具准备和驱动安装
 
-1.模块清单
+#1.模块清单
 
 (1)stm32f103c8t6最小电路板 购买连接：https://item.taobao.com/item.htm?id=559305712053
 
@@ -27,7 +27,7 @@ c.STLink或其他烧录方案的工具准备和驱动安装
 
 (5)登仕唐 DHT11温湿度传感器模块 购买链接:https://ic-item.jd.com/10099445838473.html
 
-2.接线说明
+#2.接线说明
                     5V              --STM32--                                           GND      
        
        语音模块(5V)->|             B12      GND----------------------------------------->|
@@ -73,11 +73,11 @@ c.STLink或其他烧录方案的工具准备和驱动安装
 
 
 
-3.接线实物图片:
+#3.接线实物图片:
 
 <img width="560" height="400" alt="微信图片_20260414140655_299_4" src="https://github.com/user-attachments/assets/a7895d3b-1b5f-4550-8378-1d658e95a0b1" />
 
-4.仓库源工程文件的CubeMx配置如下:
+#4.仓库源工程文件的CubeMx配置如下:
 
 <img width="475" height="390" alt="屏幕截图 2026-04-17 162627" src="https://github.com/user-attachments/assets/c0f640b5-1bca-4fa4-b88a-679eb3558935" />
 
@@ -96,6 +96,15 @@ c.STLink或其他烧录方案的工具准备和驱动安装
 2.I2C：I2C1/I2C2均为标准模式下的100000HZ，两者配置参数完全相同，如下图：
 
 <img width="500" height="381" alt="屏幕截图 2026-04-17 163255" src="https://github.com/user-attachments/assets/8ee82333-24ad-4717-bcef-1740747d309a" />
+
+
+
+
+#5.点击GENERATE CODE并指定IDE为Keil（版本选择最新即可），如果你计划未来修改此工程，可选择Copy all used libraries into the project folder
+
+<img width="700" height="500" alt="屏幕截图 2026-04-17 164733" src="https://github.com/user-attachments/assets/f20658d0-9cbd-40ef-9bc7-830b95d1b7aa" />
+<img width="700" height="500" alt="屏幕截图 2026-04-17 165016" src="https://github.com/user-attachments/assets/e7d85436-c39f-4767-b395-a4c2f3c655f7" />
+
 
 
 
