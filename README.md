@@ -135,6 +135,7 @@ c.STLink或其他烧录方案的工具准备和驱动安装
 -📂
 [2.1 快速上手.pdf](https://github.com/user-attachments/files/26825780/2.1.pdf)
 
+1.固件烧录工具:https://github.com/JimingYang25/Intelligent-slumber-terminal/tree/1c84b8a1ccdbad80088a57352156d991b87871df/1.%E7%83%A7%E5%BD%95%E5%B7%A5%E5%85%B7
 
 
 [1.1 语音交互模块简介.pdf](https://github.com/user-attachments/files/26825698/1.1.pdf)
