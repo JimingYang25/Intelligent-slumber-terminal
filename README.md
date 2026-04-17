@@ -1,4 +1,7 @@
 # 智能睡眠终端/Intelligent Slumber Terminal
+        
+      JimingYang(Independent developer)
+产品描述:
 这是一个基于stm32f103c8t6型号单片机的项目，用于为用户提供语音操作的睡眠指标收集与服务。
 
 1.模块清单
@@ -61,5 +64,5 @@
                      
                                      |-------------------------->|                        |
 
-                      ![322952871ae95f52ea49c3bdf0848d1b](https://github.com/user-attachments/assets/c53a1211-6275-45fe-ab27-7816ea45e07e)
-               
+                      <img width="1279" height="1706" alt="微信图片_20260414140655_299_4" src="https://github.com/user-attachments/assets/255c90b4-b50b-42fa-9169-fdbc6d10955c" />
+
