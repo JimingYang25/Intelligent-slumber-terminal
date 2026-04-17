@@ -5,7 +5,10 @@
 这是一个基于stm32f103c8t6型号单片机的项目，用于为用户提供语音操作的睡眠指标收集与服务。
 复刻此项目之前你需要自行完成:
 a.模块清单的硬件购买
+
 b.keil以及STM32CubeMX的开发环境搭建
+
+c.STLink或其他烧录方案的工具准备和驱动安装
 
 1.模块清单
 
@@ -73,5 +76,26 @@ b.keil以及STM32CubeMX的开发环境搭建
 3.接线实物图片:
 
 <img width="560" height="400" alt="微信图片_20260414140655_299_4" src="https://github.com/user-attachments/assets/a7895d3b-1b5f-4550-8378-1d658e95a0b1" />
+
+4.仓库源工程文件的CubeMx配置如下:
+
+<img width="475" height="390" alt="屏幕截图 2026-04-17 162627" src="https://github.com/user-attachments/assets/c0f640b5-1bca-4fa4-b88a-679eb3558935" />
+
+
+
+重要参数说明:
+
+
+
+1.在HSE和LSE来源均为Crystal/Ceramic Resonator的条件下，时钟树配置为HCLK:72MHZ,APB1主频:36MHZ,APB2主频:72MHZ
+
+<img width="700" height="500" alt="屏幕截图 2026-04-17 163814" src="https://github.com/user-attachments/assets/cc162e20-0879-4acf-9c85-3c56e81e64c3" />
+
+
+
+2.I2C：I2C1/I2C2均为标准模式下的100000HZ，两者配置参数完全相同，如下图：
+
+<img width="500" height="381" alt="屏幕截图 2026-04-17 163255" src="https://github.com/user-attachments/assets/8ee82333-24ad-4717-bcef-1740747d309a" />
+
 
 
