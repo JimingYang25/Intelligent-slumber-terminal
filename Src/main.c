@@ -31,8 +31,15 @@
 #include "BH1750_Sensor.h"
 #include <stdlib.h> 
 #include "AI_Record.h"
-#define ADC_BUFFER_SIZE  10    // DMA缓冲区大小（可调整）
-#define ADC_REF_VOLTAGE  3300  // ADC参考电压，单位mV（通常3.3V=3300mV）
+
+//参考语音命令对应的寄存器单字节数据
+#define ACTIVATE 0x81  //启动 -- 开始收集各传感器数据
+#define OLED_ON  0x12  //开灯 -- 亮起LED
+#define	OLED_OFF 0x13  //关灯 -- 熄灭LED
+#define AWAKE 	 0x80  //唤醒词 -- 会激活OLED的表情表现
+
+#define ADC_BUFFER_SIZE  10    
+#define ADC_REF_VOLTAGE  3300  
 uint16_t adc_dma_buffer[ADC_BUFFER_SIZE] = {0};
 uint8_t score1,score2,score3,score4;
 uint16_t adc_voltage; // 存储转换后的电压值
@@ -44,7 +51,7 @@ void ADC_Start_Continuous(void)
   
   if (HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adc_dma_buffer, ADC_BUFFER_SIZE) != HAL_OK)
   {
-    Error_Handler(); // 转换启动失败，进入错误处理
+    Error_Handler(); 
   }
 }
 
@@ -57,10 +64,10 @@ uint16_t ADC_Get_Average_Voltage(void)
     adc_sum += adc_dma_buffer[i];
   }
   
-  // 计算平均值
+
   uint16_t adc_avg = adc_sum / ADC_BUFFER_SIZE;
   
-  // 12位ADC转换为电压：电压 = (ADC值 * 参考电压) / 4095
+
   uint16_t voltage_mv = (adc_avg * ADC_REF_VOLTAGE) / 4095;
   
   return voltage_mv;
@@ -157,17 +164,17 @@ int main(void)
 	
   /* USER CODE BEGIN 2 */
 	OLED_Init();
-	ADC_Start_Continuous(); // 启动ADC连续转换（关键：放在初始化后）
+	ADC_Start_Continuous(); ）
 	//BH1750_Init();
 	
 	
 	if(DHT11_Init() == 0)
   {
-    OLED_ShowString(0, 0, "DHT11 OK");  // 第一行显示初始化成功
+    OLED_ShowString(0, 0, "DHT11 OK"); 
   }
   else
   {
-    OLED_ShowString(0, 0, "DHT11 ERR"); // 第一行显示初始化失败
+    OLED_ShowString(0, 0, "DHT11 ERR");
     HAL_Delay(2000);
   }
 	HAL_Delay(1100);
@@ -182,11 +189,11 @@ int main(void)
     /* USER CODE END WHILE */
 		adc_voltage = ADC_Get_Average_Voltage();
 		dt=Asr_Result();
-		if(dt!=0)
+		if(dt!=0) //在识别成功之前寄存器数据会默认为0
 		{
 			OLED_Expression_Speaking(500);
 			
-			if (dt==0x81)//执行监测
+			if (dt==ACTIVATE)
 			{OLED_Expression_Speaking(500);
 				
 				while (1){
@@ -221,12 +228,12 @@ int main(void)
 			
 			
 			}
-			if(dt==0x12){OLED_Expression_Speaking(500);HAL_GPIO_WritePin(GPIOC,GPIO_PIN_13,GPIO_PIN_SET);};
+			if(dt==OLED_ON){OLED_Expression_Speaking(500);HAL_GPIO_WritePin(GPIOC,GPIO_PIN_13,GPIO_PIN_SET);};
 			
-			if(dt==0x13){OLED_Expression_Speaking(500);HAL_GPIO_WritePin(GPIOC,GPIO_PIN_13,GPIO_PIN_RESET);};
+			if(dt==OLED_OFF){OLED_Expression_Speaking(500);HAL_GPIO_WritePin(GPIOC,GPIO_PIN_13,GPIO_PIN_RESET);};
 			
 			
-			if (dt==0x80)
+			if (dt==AWAKE) //以下沿用上方主逻辑代码
 			{OLED_Expression_Wait();
 			
 			  while (1)
@@ -238,7 +245,7 @@ int main(void)
 		{
 			
 			
-			if (dt==0x81)//执行监测
+			if (dt==ACTIVATE)
 			{while (1){
 			
 							if (DHT11_ReadData(&temp,&humi)==0)
@@ -271,9 +278,9 @@ int main(void)
 			
 			
 			}
-			if(dt==0x12){OLED_Expression_Speaking(500);HAL_GPIO_WritePin(GPIOC,GPIO_PIN_13,GPIO_PIN_SET);};
+			if(dt==OLED_ON){OLED_Expression_Speaking(500);HAL_GPIO_WritePin(GPIOC,GPIO_PIN_13,GPIO_PIN_SET);};
 			
-			if(dt==0x13){OLED_Expression_Speaking(500);HAL_GPIO_WritePin(GPIOC,GPIO_PIN_13,GPIO_PIN_RESET);};
+			if(dt==OLED_OFF){OLED_Expression_Speaking(500);HAL_GPIO_WritePin(GPIOC,GPIO_PIN_13,GPIO_PIN_RESET);};
 			
 			
 			num+=1;
